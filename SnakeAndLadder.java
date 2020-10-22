@@ -1,11 +1,14 @@
 class Player{
-        int position=0;
+	int position=0;
+        public int roll(){
+        int dieNumber=(int)((Math.random()*10)%6+1);
+        System.out.println(dieNumber);
+	return 0;
+        }
 }
-
 public class SnakeAndLadder{
         public static void main(String[] args){
-	System.out.println("WELCOME TO SNAE AND LADDER PROBLEM");
         Player p=new Player();
-
+        p.roll();
         }
 }
