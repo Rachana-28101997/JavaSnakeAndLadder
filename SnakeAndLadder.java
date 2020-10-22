@@ -7,6 +7,7 @@ class Player{
         int dieNumber= (int)((Math.random()*10)%6+1);
         System.out.println(dieNumber);
         dieRoll++;
+	System.out.println("number of die rolled" +dieRoll);
         switch (option())
         {
                 case 0:
@@ -44,15 +45,18 @@ public class SnakeAndLadder{
         Player p=new Player();
         p.roll();
         p.option();
-	      while(p.position!=100){
-                int dieRoll = -1;
-                dieRoll = p.roll();
-                if(dieRoll > 0){
-                        if(p.position == 100)
-                        break;
-                 p.roll();
-                }
+        while(p.position!=100){
+        int dieRoll = -1;
+        dieRoll = p.roll();
+        if(dieRoll > 0){
+        if(p.position == 100)
+          break;
+        p.roll();
         }
+        }
+	//System.out.println("number of times die rolled" +dieRoll);
+        if(p.position==100)
+        System.out.println("\nPlayerwins");
+	
 }
-
 }
