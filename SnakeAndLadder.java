@@ -3,6 +3,7 @@ class Player{
         int dieRoll=0;
 
         public int roll(){
+
         int dieNumber= (int)((Math.random()*10)%6+1);
         System.out.println(dieNumber);
         dieRoll++;
@@ -14,7 +15,7 @@ class Player{
                 case 1:
                         System.out.println("Ladder, Initial Position: " + position + ", Die Rolled: " + dieNumber + ", Final Position: " + (position + dieNumber));
                         position+=dieNumber;
-                        return dieNumber;
+                        return +dieNumber;
                 default:
                         System.out.println("Snake, Initial Position: " + position + ", Die Rolled: " + dieNumber + ", Final Position: " + (position - dieNumber));
                         position-=dieNumber;
@@ -32,5 +33,15 @@ public class SnakeAndLadder{
         Player p=new Player();
         p.roll();
         p.option();
+        while(p.position!=100){
+                int dieRoll = -1;
+                dieRoll = p.roll();
+                if(dieRoll > 0){
+                        if(p.position == 100)
+                        break;
+                 p.roll();
+                }
         }
+}
+
 }
